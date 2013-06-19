@@ -3,10 +3,6 @@ module Rubualizations
 
       attr_accessor :cols_def
 
-      def tablize(models, params)
-         return tablize_hashes(models.map!{|m| m.attributes}, params)
-      end
-
       def tablize_hashes(hashes, params)
          if params[:cols].to_s == ""
             cols = @cols_def.keys
