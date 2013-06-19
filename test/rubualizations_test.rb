@@ -47,7 +47,7 @@ class RubualizationsTest < Test::Unit::TestCase
    end
 
    def test_col_label
-      assert_equal @mock.humanize("date_placed"), "Date placed"
+      assert_equal @mock.col_label("date_placed"), "Date placed"
    end
 
 end
