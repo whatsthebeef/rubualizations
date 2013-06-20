@@ -1,3 +1,34 @@
-= GoogleVisualizations
+=Rubualizations
 
-This project rocks and uses MIT-LICENSE.
+Summary
+
+Rubualizations is a ruby gem which converts ruby hashes into data structures which can be used by (Google Visualizations) to create graphs in your web page.
+
+At present it a partial implementation of the (data source specification described here) which I hope will evolve to cover the complete specification.
+
+Usage
+
+Include the module
+
+    include Rubualizations::Rails::Tableable
+
+In the class definition would you would like to use the module
+
+Define the columns to use by setting the @cols_def (column definition) attribute in the class where you will be converting your hashes 
+(or in the initialize method)
+
+    @cols_def = { 
+       "dateplaced" => {id: "A", label: "Date Placed", type: "datetime"}
+       "profit" => {id: "B", label: "Profit", type: "number"}
+    }
+    
+According to the google visualization API specification (see examples here)[https://developers.google.com/chart/interactive/docs/datatables_dataviews]
+
+Then pass the tablize_hashes method a list of hashes which include the attributes defined in the your column definition. In our
+example this is 'dateplaced' and 'profit' and return the definitions.
+
+    tablize(hash_list, {cols:"dataplaced,profit"})
+
+If you expose the output of this method to the web you can query your data using the query string
+
+    ?cols=dateplaced,profit
