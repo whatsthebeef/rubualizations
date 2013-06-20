@@ -2,9 +2,9 @@
 
 Summary
 
-Rubualizations is a ruby gem which converts ruby hashes into data structures which can be used by (Google Visualizations) to create graphs in your web page.
+Rubualizations is a ruby gem which converts ruby hashes into data structures which can be used by (Google Visualizations)[https://developers.google.com/chart/interactive/docs/reference] to create graphs in your web page.
 
-At present it a partial implementation of the (data source specification described here) which I hope will evolve to cover the complete specification.
+At present it a partial implementation of the (data source specification described here)[https://developers.google.com/chart/interactive/docs/datatables_dataviews#javascriptliteral] which I hope will evolve to cover the complete specification.
 
 Usage
 
@@ -32,3 +32,5 @@ example this is 'dateplaced' and 'profit' and return the definitions.
 If you expose the output of this method to the web you can query your data using the query string
 
     ?cols=dateplaced,profit
+
+Also see https://github.com/whatsthebeef/rubualizations-rails for rails specific gem which handles ActiveRecords as well as hashes
